@@ -1,4 +1,4 @@
-import "./App.css";
+import "./gameStats.css";
 
 type Player = {
   rank: number;
@@ -57,7 +57,7 @@ function uniqueCount(values: string[]): number {
   return new Set(values).size;
 }
 
-export default function App() {
+export default function GameStats() {
   const totalParticipants = players.length;
   const familiesCount = uniqueCount(players.map((p) => p.family));
 
