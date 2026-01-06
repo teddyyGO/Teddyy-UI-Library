@@ -1,106 +1,210 @@
-/* Page background (keeps it consistent with your other UIs) */
+/* src/pages/resource-war-tablet/resource-war-tablet.css */
+
 .rwt-page{
   min-height:100vh;
   background:
     radial-gradient(1200px 600px at 20% 10%, rgba(44,88,255,.35), transparent 60%),
     radial-gradient(900px 500px at 70% 20%, rgba(255,138,31,.10), transparent 60%),
     #070b12;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.88);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 650;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding: 18px;
+  padding: 28px 16px;
 }
 
-/* Tablet panel (centered preview for UI library) */
+/* Panel should NOT stretch down */
 .rwt-panel{
-  width: min(980px, 96vw);
+  width: min(1100px, 96vw);
+  height: fit-content;
+  align-self: flex-start;
+
   border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
   background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
   backdrop-filter: blur(14px);
   box-shadow: 0 30px 90px rgba(0,0,0,.65);
 }
 
-/* Header */
+/* HEADER */
 .rwt-header{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap: 16px;
+  gap:16px;
   padding: 16px 18px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .rwt-headerTitle{
   font-weight: 950;
-  letter-spacing: .4px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .rwt-headerSub{
   margin-top: 4px;
   font-size: 12px;
   color: rgba(255,255,255,.55);
-  font-weight: 650;
-}
-
-.rwt-myFam{
-  text-align:right;
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
-.rwt-myFamLabel{
-  font-size: 11px;
-  color: rgba(255,255,255,.45);
   font-weight: 700;
 }
-.rwt-myFamName{
+
+.rwt-headerRight{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+}
+
+.rwt-yourFamilyLabel{
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  font-weight: 800;
+  text-align:right;
+}
+.rwt-yourFamilyName{
+  margin-top: 4px;
   font-weight: 950;
   color: rgba(255,138,31,.95);
+  text-align:right;
 }
 
-/* 6 cards grid */
+/* NEXT BATTLE
+   - no full width red background
+   - red rounded rectangle in the middle
+*/
+.rwt-next{
+  display:flex;
+  justify-content:center;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.06);
+}
+
+.rwt-nextCenter{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-align:center;
+
+  padding: 12px 16px;
+  border-radius: 14px;
+
+  background: linear-gradient(180deg, rgba(220,38,38,.38), rgba(220,38,38,.16));
+  border: 1px solid rgba(220,38,38,.35);
+  box-shadow: 0 18px 50px rgba(0,0,0,.45);
+}
+
+.rwt-nextDot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#dc2626;
+  box-shadow: 0 0 16px rgba(220,38,38,.95);
+}
+
+.rwt-nextText{
+  min-width:0;
+}
+
+.rwt-nextLabel{
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.6px;
+  color: rgba(255,255,255,.75);
+}
+
+.rwt-nextName{
+  margin-top:2px;
+  font-size:14px;
+  font-weight:950;
+  color: rgba(255,255,255,.95);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width: 420px;
+}
+
+.rwt-nextTime{
+  margin-top:4px;
+  font-size:12px;
+  font-weight:800;
+  color: rgba(255,255,255,.85);
+}
+
+.rwt-nextTime strong{
+  color: #ffb4b4;
+  font-weight:950;
+}
+
+/* Next battle GPS button: NORMAL FLOW (NOT absolute) */
+.rwt-nextGpsBtn{
+  position: static;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding: 9px 12px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(10,14,22,.60);
+  color: rgba(255,255,255,.92);
+  font-weight: 950;
+
+  cursor:pointer;
+  backdrop-filter: blur(10px);
+}
+
+.rwt-nextGpsBtn:hover{ filter: brightness(1.08); }
+
+.rwt-nextGpsBtn .rwt-gpsIcon{
+  color:#22c55e;
+  filter: drop-shadow(0 0 10px rgba(34,197,94,.6));
+}
+
+/* GRID 3x2 */
 .rwt-grid{
-  padding: 14px 14px 10px;
+  padding: 16px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
-@media (max-width: 900px){
+@media (max-width: 980px){
   .rwt-grid{ grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 620px){
+@media (max-width: 640px){
   .rwt-grid{ grid-template-columns: 1fr; }
 }
 
-/* Card */
+/* CARD */
 .rwt-card{
   border-radius: 14px;
   overflow:hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.20);
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
 }
 
+/* Owned cards should NOT be green anymore */
 .rwt-owned{
-  border-color: rgba(16,185,129,.45);
-  background: linear-gradient(180deg, rgba(16,185,129,.14), rgba(0,0,0,.18));
+  border-color: rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.16));
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
 }
 
 .rwt-neutral{
   border-color: rgba(255,255,255,.10);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.18));
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.16));
 }
 
-/* Thumbnail */
+/* IMAGE stays neutral */
 .rwt-thumb{
   position:relative;
-  height: 110px;
+  height: 175px;
 }
+
 .rwt-thumb img{
   width:100%;
   height:100%;
@@ -108,6 +212,7 @@
   display:block;
   filter: saturate(1.05) contrast(1.05);
 }
+
 .rwt-thumb::after{
   content:"";
   position:absolute;
@@ -115,42 +220,41 @@
   background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.55));
 }
 
-/* GPS button */
+/* GPS button inside CARD (absolute is correct here) */
 .rwt-gps{
   position:absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 2;
+  right: 12px;
+  top: 12px;
+  z-index:2;
 
   display:inline-flex;
   align-items:center;
   gap:8px;
-
-  padding: 8px 10px;
+  padding: 9px 12px;
   border-radius: 999px;
 
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(10,14,22,.65);
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(10,14,22,.70);
   color: rgba(255,255,255,.92);
-
-  font-weight: 900;
-  font-size: 12px;
+  font-weight: 950;
   cursor:pointer;
   backdrop-filter: blur(10px);
 }
-.rwt-gps:hover{
-  filter: brightness(1.08);
-}
-.rwt-pillOwned{
-  background: rgba(34,197,94,.28);
-  border-color: rgba(34,197,94,.6);
-  color: #d1fae5;
+
+.rwt-gps:hover{ filter: brightness(1.08); }
+
+.rwt-gpsIcon{
+  width:18px;
+  height:18px;
+  display:block;
+  color:#22c55e;
+  filter: drop-shadow(0 0 10px rgba(34,197,94,.6));
 }
 
-
-/* Body */
+/* BODY */
 .rwt-body{
-  padding: 12px 12px 12px;
+  padding: 12px 12px 14px;
+  background: rgba(0,0,0,.22);
 }
 
 .rwt-titleRow{
@@ -163,7 +267,7 @@
 
 .rwt-title{
   font-weight: 950;
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255,255,255,.95);
   white-space: nowrap;
   overflow: hidden;
@@ -171,65 +275,37 @@
 }
 
 .rwt-pill{
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 950;
-  letter-spacing: .5px;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.08);
   color: rgba(255,255,255,.85);
-  flex: 0 0 auto;
 }
 
-.rwt-pillOwned{
-  background: rgba(16,185,129,.18);
-  border-color: rgba(16,185,129,.35);
-  color: rgba(207,255,236,.95);
+/* Default Owner pill */
+.rwt-pillOwner{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.85);
 }
 
-.rwt-pillNeutral{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.12);
+/* FULL GREEN pill if owned */
+.rwt-owned .rwt-pillOwner{
+  background: rgba(34,197,94,.95);
+  border-color: rgba(34,197,94,.95);
+  color: #07110c;
 }
 
-/* Owner + income row */
 .rwt-metaRow{
   display:flex;
   align-items:flex-end;
-  justify-content:space-between;
-  gap: 10px;
+  justify-content:flex-end;
 }
 
-.rwt-owner{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-width:0;
-}
-
-.rwt-familyLogo{
-  width:26px;
-  height:26px;
-  border-radius: 8px;
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  flex: 0 0 auto;
-}
-
-.rwt-ownerText{
-  font-size: 12px;
-  color: rgba(255,255,255,.62);
-  font-weight: 750;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Income block */
 .rwt-income{
   text-align:right;
-  flex: 0 0 auto;
 }
 
 .rwt-incomeValue{
@@ -238,23 +314,23 @@
   font-size: 14px;
   line-height: 1.1;
 }
+
 .rwt-incomeLabel{
-  font-size: 10px;
+  font-size: 11px;
   color: rgba(255,255,255,.45);
   font-weight: 700;
+  margin-top: 2px;
 }
 
-/* Summary */
+/* SUMMARY */
 .rwt-summary{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap: 12px;
-
-  padding: 14px 18px;
-  border-top: 1px solid rgba(255,255,255,.08);
-
-  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.30));
+  gap:12px;
+  padding: 14px 18px 16px;
+  border-top:1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
 }
 
 .rwt-summaryTitle{
@@ -266,12 +342,7 @@
   margin-top: 4px;
   font-size: 12px;
   color: rgba(255,255,255,.55);
-  font-weight: 700;
-}
-
-.rwt-summaryCount{
-  color: rgba(255,255,255,.85);
-  font-weight: 950;
+  font-weight: 750;
 }
 
 .rwt-summaryRight{
@@ -280,13 +351,14 @@
 
 .rwt-summaryMoney{
   font-weight: 950;
-  font-size: 16px;
-  color: rgba(16,185,129,.92);
+  font-size: 18px;
+  color: rgba(34,197,94,.92);
   line-height: 1.1;
 }
 
-.rwt-summaryLabel{
-  font-size: 10px;
+.rwt-summaryUnit{
+  font-size: 11px;
   color: rgba(255,255,255,.45);
   font-weight: 700;
+  margin-top: 2px;
 }

@@ -12,8 +12,8 @@ export default function Home() {
           🎮 Game Stats
         </Link>
 
-        <Link to="/air-drop" className="uiCard">
-          📦 Air Drop
+        <Link to="/timer" className="uiCard">
+          ⏱️ Timer
         </Link>
         <Link to="/ResourceWarTablet" className="uiCard">
           🔫 ResourceWarTablet
