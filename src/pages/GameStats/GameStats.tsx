@@ -1,4 +1,4 @@
-import "./gameStats.css";
+import "./GameStats.css";
 
 type Player = {
   rank: number;
@@ -45,8 +45,7 @@ const players: Player[] = [
 ];
 
 const winnerFamily = "ACE";
-const modeTitle = "Resource War";
-const killsSummary = "3 kills";
+const modeTitle = "Match Summary";
 
 function kd(kills: number, deaths: number): string {
   if (deaths === 0) return kills > 0 ? `${kills}.0` : "0.0";
@@ -69,10 +68,8 @@ export default function GameStats() {
         <div className="top">
           <div className="leftBlock">
             <div>
-              <div className="resultTag">GAME RESULT</div>
+              <div className="resultTag">Resource War</div>
               <div className="resultMeta">
-                <div className="kills">{killsSummary}</div>
-                <div className="scoreLabel">Your score</div>
               </div>
             </div>
           </div>
@@ -94,8 +91,7 @@ export default function GameStats() {
               />
             </svg>
             <span className="winnerLabel">Winner</span>
-            <span className="winnerName">Family</span>
-            <span className="winnerChip">{winnerFamily}</span>
+            <span className="winnerName">{winnerFamily}</span>
           </div>
 
           
@@ -103,7 +99,6 @@ export default function GameStats() {
             <div className="modeRow">
               <div className="gameTitle">{modeTitle}</div>
             </div>
-            <div className="subTitle">Match summary</div>
           </div>
         </div>
 

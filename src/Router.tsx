@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home/home";
 import GameStats from "./pages/GameStats/GameStats";
-import AirDrop from "./pages/timer/timer";
+import Timer from "./pages/timer/timer";
+import ResourceWarTablet from "./pages/resource-war-tablet/resource-war-tablet";
 
 export default function Router() {
   return (
@@ -11,9 +12,12 @@ export default function Router() {
         {/* UI HUB */}
         <Route path="/" element={<Home />} />
 
-        {/* UI PAGES */}
+        {/* UI PREVIEWS */}
         <Route path="/game-stats" element={<GameStats />} />
-        <Route path="/air-drop" element={<AirDrop />} />
+        <Route path="/timer" element={<Timer />} />
+<Route path="/resource-war-tablet" element={<ResourceWarTablet />} />
+<Route path="/ResourceWarTablet" element={<ResourceWarTablet />} />
+
       </Routes>
     </BrowserRouter>
   );

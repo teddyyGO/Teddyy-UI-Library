@@ -58,36 +58,33 @@
 }
 
 .resultTag{
-  position:relative;
-  padding: 14px 16px 14px 18px;
-  background: rgba(255,255,255,.92);
+  position: relative;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.92);
   color:#111;
   font-weight:800;
   letter-spacing:.5px;
-  border-radius: 6px;
   text-transform:uppercase;
   min-width: 210px;
+  text-align: center;
   box-shadow: 0 18px 40px rgba(0,0,0,.35);
-  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 3% 50%);
+
+  /* shape */
+  clip-path: polygon(
+    0 0,
+    94% 0,
+    100% 50%,
+    94% 100%,
+    0 100%,
+    2% 50%
+  );
 }
+
 
 .resultMeta{
   margin-top:10px;
   line-height:1.05;
 }
-.kills{
-  font-weight:800;
-  color:var(--accent);
-  font-size:18px;
-  margin-bottom:6px;
-}
-.scoreLabel{
-  font-size:12px;
-  color:var(--muted);
-  font-weight:600;
-}
-
-
 .winnerBadge{
   margin-top:2px;
   padding: 10px 14px;
@@ -147,14 +144,6 @@
   color:rgba(255,255,255,.9);
   font-size:18px;
 }
-.subTitle{
-  font-size:11px;
-  color: rgba(255,255,255,.38);
-  font-weight:700;
-  margin-top:-2px;
-}
-
-
 .section{
   margin-top:22px;
 }
@@ -246,7 +235,7 @@
 .familyLogo{
   width:28px;
   height:28px;
-  border-radius:8px;
+  border-radius:6px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.05);
   object-fit: cover;
