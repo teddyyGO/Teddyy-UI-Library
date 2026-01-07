@@ -1,0 +1,306 @@
+.t-root {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(44,88,255,.35), transparent 60%),
+    radial-gradient(900px 500px at 70% 20%, rgba(255,138,31,.10), transparent 60%),
+    #070b12;
+
+  color: rgba(255,255,255,.88);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 650;
+
+  display: grid;
+  place-items: center; /* ← THIS is the key */
+}
+
+
+
+/* GTA/HUD palette: muted teal + burnt orange (NOT neon) */
+.t-panel {
+  --bgTop: rgba(22, 24, 29, 0.94);
+  --bgBot: rgba(14, 16, 20, 0.94);
+  --border: rgba(255, 255, 255, 0.06);
+
+  --teal: rgba(70, 135, 150, 0.95);
+  --tealSoft: rgba(70, 135, 150, 0.18);
+  --tealBorder: rgba(70, 135, 150, 0.22);
+
+  --orange: rgba(185, 110, 40, 0.95);
+  --orangeSoft: rgba(185, 110, 40, 0.16);
+  --orangeBorder: rgba(185, 110, 40, 0.22);
+
+  --green: rgba(65, 170, 120, 0.95);
+  --greenSoft: rgba(65, 170, 120, 0.14);
+  --greenBorder: rgba(65, 170, 120, 0.22);
+
+  --red: rgba(215, 60, 80, 0.95);
+  --redSoft: rgba(215, 60, 80, 0.14);
+  --redBorder: rgba(215, 60, 80, 0.22);
+
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, var(--bgTop), var(--bgBot));
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
+
+/* HEADER */
+.t-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+
+  border-top: 2px solid var(--orangeBorder);
+  border-bottom: 1px solid var(--border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(185, 110, 40, 0.10),
+    rgba(0, 0, 0, 0.00)
+  );
+}
+
+.t-headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.t-liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--orange);
+  /* keep it subtle */
+  box-shadow: 0 0 8px rgba(185, 110, 40, 0.22);
+}
+
+.t-titleWrap {
+  display: grid;
+  gap: 2px;
+}
+
+.t-title {
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: rgba(235, 240, 245, 0.92);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.t-subtitle {
+  font-weight: 700;
+  font-size: 11px;
+  color: rgba(170, 200, 210, 0.78);
+  line-height: 1.1;
+}
+
+/* TIMER CHIP */
+.t-timer {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+
+  padding: 6px 10px;
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--tealBorder);
+}
+
+.t-timerLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: rgba(170, 205, 215, 0.78);
+}
+
+.t-timerValue {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: rgba(235, 245, 248, 0.95);
+}
+
+/* OVERTIME */
+.t-timerOvertime {
+  border-color: var(--redBorder);
+  animation: tPulse 1.1s infinite ease-in-out;
+}
+
+.t-timerOvertime .t-timerLabel {
+  color: rgba(255, 170, 185, 0.80);
+}
+
+.t-timerOvertime .t-timerValue {
+  color: rgba(255, 220, 228, 0.95);
+}
+
+@keyframes tPulse {
+  0% { box-shadow: 0 0 0 rgba(215, 60, 80, 0); }
+  50% { box-shadow: 0 0 14px rgba(215, 60, 80, 0.22); }
+  100% { box-shadow: 0 0 0 rgba(215, 60, 80, 0); }
+}
+
+/* ROWS */
+.t-rows {
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.t-row {
+  display: grid;
+  grid-template-columns: 26px 1fr 30px;
+  align-items: center;
+  gap: 10px;
+
+  padding: 7px 10px;
+  border-radius: 11px;
+
+  background: linear-gradient(180deg, rgba(10, 12, 16, 0.62), rgba(8, 10, 14, 0.62));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* OUR FAMILY: green only here */
+.t-rowOur {
+  border-color: var(--greenBorder);
+  background: linear-gradient(180deg, rgba(12, 20, 18, 0.60), rgba(8, 10, 14, 0.62));
+}
+
+.t-emblem {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  background: rgba(0, 0, 0, 0.40);
+  border: 1px solid var(--orangeBorder);
+}
+
+.t-rowOur .t-emblem {
+  border-color: var(--greenBorder);
+}
+
+.t-emblem span {
+  font-size: 11px;
+  font-weight: 900;
+  color: rgba(235, 210, 190, 0.90);
+}
+
+.t-rowOur .t-emblem span {
+  color: rgba(200, 245, 225, 0.95);
+}
+
+.t-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: rgba(235, 240, 245, 0.92);
+  text-transform: uppercase;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.t-youTag {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+
+  color: rgba(5, 10, 8, 0.95);
+  background: rgba(65, 170, 120, 0.92);
+}
+
+/* Alive: teal base; red when 0 */
+.t-alive {
+  justify-self: end;
+  width: 28px;
+  height: 22px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(235, 245, 248, 0.95);
+
+  background: var(--tealSoft);
+  border: 1px solid var(--tealBorder);
+}
+
+.t-rowOur .t-alive {
+  border-color: var(--greenBorder);
+  background: var(--greenSoft);
+}
+
+.t-aliveZero {
+  color: rgba(255, 210, 218, 0.92);
+  background: var(--redSoft);
+  border-color: var(--redBorder);
+}
+
+/* JOIN BAR */
+.t-join {
+  margin: 0 12px 12px;
+  height: 34px;
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: rgba(185, 110, 40, 0.10);
+  border: 1px solid var(--orangeBorder);
+}
+
+.t-joinDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--teal);
+  box-shadow: 0 0 8px rgba(70, 135, 150, 0.18);
+}
+
+.t-joinText {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: rgba(235, 240, 245, 0.90);
+}
+
+.t-joinTime {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: rgba(235, 210, 190, 0.88);
+}
+
+.t-joinClosed {
+  background: rgba(215, 60, 80, 0.12);
+  border-color: var(--redBorder);
+}
+
+.t-joinClosed .t-joinDot {
+  background: var(--red);
+  box-shadow: 0 0 8px rgba(215, 60, 80, 0.18);
+}
+
+.t-joinClosed .t-joinText,
+.t-joinClosed .t-joinTime {
+  color: rgba(255, 210, 218, 0.92);
+}

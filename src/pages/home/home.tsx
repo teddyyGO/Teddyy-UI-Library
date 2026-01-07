@@ -12,7 +12,7 @@ export default function Home() {
           🎮 Game Stats
         </Link>
 
-        <Link to="/timer" className="uiCard">
+        <Link to="/Timer" className="uiCard">
           ⏱️ Timer
         </Link>
         <Link to="/ResourceWarTablet" className="uiCard">
