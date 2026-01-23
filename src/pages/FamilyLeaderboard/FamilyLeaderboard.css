@@ -1,0 +1,162 @@
+.fl-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(44,88,255,.35), transparent 60%),
+    radial-gradient(900px 500px at 70% 20%, rgba(255,138,31,.18), transparent 60%),
+    #070b12;
+
+  display: flex;
+  justify-content: center;
+  padding: 26px 18px;
+
+  color: rgba(255,255,255,.9);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.fl-tablet {
+  width: 100%;
+  max-width: 1150px;
+
+  background: linear-gradient(180deg, rgba(18,22,30,.88), rgba(10,12,18,.92));
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+
+  padding: 18px;
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 26px 60px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.fl-header {
+  padding-bottom: 14px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255,138,31,.45);
+}
+
+.fl-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: .8px;
+}
+
+.fl-header p {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(220,220,220,.7);
+}
+
+.fl-table {
+  display: grid;
+  gap: 6px;
+}
+
+.fl-row {
+  display: grid;
+  grid-template-columns:
+    42px
+    210px
+    90px
+    repeat(7, 1fr);
+
+  align-items: center;
+  padding: 11px 14px;
+
+  background: rgba(8,10,14,.85);
+  border: 1px solid rgba(255,255,255,.06);
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.fl-head {
+  background: rgba(255,138,31,.15);
+  border-color: rgba(255,138,31,.45);
+  font-size: 12px;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.rank {
+  font-weight: 900;
+  color: rgb(255,185,110);
+}
+
+.family {
+  font-weight: 900;
+}
+
+.total {
+  font-weight: 900;
+  font-size: 15px;
+  color: rgb(90,230,160);
+}
+
+/* column alignment */
+.fl-row span {
+  text-align: center;
+}
+
+.fl-row span.family {
+  text-align: left;
+}
+
+/* tooltip */
+
+.fl-col {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+}
+
+.fl-q {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  color: rgba(255,170,90,.95);
+  background: rgba(255,138,31,.18);
+  border: 1px solid rgba(255,138,31,.55);
+}
+
+.fl-q::after {
+  content: attr(data-tip);
+
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(10,12,18,.95);
+  border: 1px solid rgba(255,138,31,.45);
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  white-space: nowrap;
+
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,.9);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+  z-index: 10;
+}
+
+.fl-q:hover::after {
+  opacity: 1;
+}

@@ -4,6 +4,8 @@ import Home from "./pages/home/home";
 import GameStats from "./pages/GameStats/GameStats";
 import Timer from "./pages/timer/timer";
 import ResourceWarTablet from "./pages/resource-war-tablet/resource-war-tablet";
+import FamilyLeaderboard from "./pages/FamilyLeaderboard/FamilyLeaderboard";
+
 
 export default function Router() {
   return (
@@ -15,8 +17,9 @@ export default function Router() {
         {/* UI PREVIEWS */}
         <Route path="/game-stats" element={<GameStats />} />
         <Route path="/timer" element={<Timer />} />
-<Route path="/resource-war-tablet" element={<ResourceWarTablet />} />
-<Route path="/ResourceWarTablet" element={<ResourceWarTablet />} />
+        <Route path="/resource-war-tablet" element={<ResourceWarTablet />} />
+        <Route path="/ResourceWarTablet" element={<ResourceWarTablet />} />
+        <Route path="/FamilyLeaderboard" element={<FamilyLeaderboard />} />
 
       </Routes>
     </BrowserRouter>
