@@ -21,6 +21,9 @@ export default function Home() {
         <Link to="/FamilyLeaderboard" className="uiCard">
           🏆 Family Leaderboard
         </Link>
+        <Link to="/resource-war" className="uiCard">
+          🌍 Resource War
+        </Link>
       </div>
     </div>
   );

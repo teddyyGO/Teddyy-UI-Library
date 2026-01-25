@@ -5,6 +5,7 @@ import GameStats from "./pages/GameStats/GameStats";
 import Timer from "./pages/timer/timer";
 import ResourceWarTablet from "./pages/resource-war-tablet/resource-war-tablet";
 import FamilyLeaderboard from "./pages/FamilyLeaderboard/FamilyLeaderboard";
+import ResourceWar from "./pages/resource-war/resource-war";
 
 
 export default function Router() {
@@ -20,7 +21,7 @@ export default function Router() {
         <Route path="/resource-war-tablet" element={<ResourceWarTablet />} />
         <Route path="/ResourceWarTablet" element={<ResourceWarTablet />} />
         <Route path="/FamilyLeaderboard" element={<FamilyLeaderboard />} />
-
+        <Route path="/resource-war" element={<ResourceWar />} />
       </Routes>
     </BrowserRouter>
   );

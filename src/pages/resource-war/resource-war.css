@@ -1,0 +1,355 @@
+/* Page background + frame */
+.rw2-page{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 600px at 18% 12%, rgba(44,88,255,.22), transparent 60%),
+    radial-gradient(900px 500px at 78% 18%, rgba(255,138,31,.14), transparent 60%),
+    #070b12;
+  color: rgba(255,255,255,.88);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  display:flex;
+}
+
+/* Sidebar */
+.rw2-side{
+  width: 280px;
+  background: rgba(7,10,14,.72);
+  border-right: 1px solid rgba(255,255,255,.06);
+  box-shadow: inset -1px 0 0 rgba(0,0,0,.35);
+  padding: 18px 14px;
+}
+
+.rw2-profile{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 10px 8px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 14px;
+}
+
+.rw2-avatar{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.12), transparent 60%),
+    linear-gradient(135deg, rgba(30,123,255,.28), rgba(0,0,0,.0)),
+    rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.rw2-profileText{ display:grid; gap: 2px; }
+.rw2-lvl{
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(255,255,255,.92);
+}
+.rw2-name{
+  font-weight: 800;
+  font-size: 13px;
+  color: rgba(255,80,90,.92);
+}
+
+.rw2-nav{
+  display:grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.rw2-navItem{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: rgba(255,255,255,.72);
+  font-weight: 750;
+  background: transparent;
+}
+
+.rw2-ico{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.06);
+  opacity: .85;
+}
+
+.rw2-active{
+  background: rgba(30,123,255,.16);
+  border: 1px solid rgba(30,123,255,.26);
+  color: rgba(255,255,255,.92);
+}
+
+.rw2-activeIco{
+  background: rgba(30,123,255,.85);
+  border-color: rgba(30,123,255,.0);
+  color: rgba(255,255,255,.95);
+}
+
+/* Main content */
+.rw2-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding: 22px 26px 18px;
+  position: relative;
+}
+
+/* Top title + next battle */
+.rw2-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 6px 4px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.rw2-title{
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  color: rgba(255,255,255,.92);
+}
+
+.rw2-next{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(160,40,55,.42), rgba(70,18,26,.38));
+  border: 1px solid rgba(255,255,255,.08);
+  min-width: 300px;
+}
+
+.rw2-nextLabel{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .6px;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 6px;
+}
+
+.rw2-nextRow{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.rw2-redDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgb(220,60,80);
+  box-shadow: 0 0 14px rgba(220,60,80,.35);
+}
+
+.rw2-nextTerr{
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+}
+
+.rw2-nextTime{
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(255,255,255,.72);
+  margin-top: 2px;
+}
+
+.rw2-nextGpsBtn{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.32);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.rw2-gpsIco{ opacity: .95; }
+
+/* Grid area */
+.rw2-gridWrap{
+  flex: 1;
+  padding: 18px 2px 68px;
+  overflow: auto;
+}
+
+/* thin scroll bar */
+.rw2-gridWrap::-webkit-scrollbar{ width: 8px; }
+.rw2-gridWrap::-webkit-scrollbar-track{ background: rgba(0,0,0,.18); border-radius: 10px; }
+.rw2-gridWrap::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.10); border-radius: 10px; }
+
+.rw2-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1220px){
+  .rw2-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px){
+  .rw2-side{ display:none; }
+  .rw2-grid{ grid-template-columns: 1fr; }
+}
+
+/* Territory card */
+.rw2-card{
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+.rw2-imgWrap{
+  position: relative;
+  height: 170px;
+  background: rgba(0,0,0,.25);
+}
+
+.rw2-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* IMPORTANT: card GPS (absolute) */
+.rw2-gps{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+
+  background: rgba(0,0,0,.40);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.rw2-cardBody{
+  padding: 12px 12px 14px;
+  background: linear-gradient(180deg, rgba(16,18,22,.92), rgba(10,12,16,.92));
+}
+
+.rw2-np{
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+  margin-bottom: 10px;
+}
+
+/* bottom row inside card */
+.rw2-bottomRow{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.rw2-ownerPill{
+  height: 36px;
+  display:inline-flex;
+  align-items:center;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.86);
+  font-weight: 800;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ONLY this turns green when owned by our family */
+.rw2-ownerMine{
+  background: rgba(90,230,160,.20);
+  border-color: rgba(90,230,160,.35);
+  color: rgba(220,255,240,.95);
+}
+
+.rw2-income{
+  text-align:right;
+  min-width: 92px;
+}
+
+.rw2-incomeVal{
+  font-weight: 900;
+  color: rgb(255, 200, 90);
+}
+
+.rw2-incomeSub{
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.55);
+  margin-top: 2px;
+}
+
+/* Footer summary bar */
+.rw2-footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding: 14px 26px;
+  background: rgba(0,0,0,.55);
+  border-top: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+}
+
+.rw2-footTitle{
+  font-weight: 900;
+  font-size: 18px;
+  color: rgba(255,255,255,.92);
+}
+
+.rw2-footSub{
+  margin-top: 4px;
+  font-weight: 700;
+  color: rgba(255,255,255,.55);
+}
+
+.rw2-footRight{
+  text-align:right;
+}
+
+.rw2-footMoney{
+  font-weight: 900;
+  font-size: 20px;
+  color: rgb(120, 255, 120);
+}
+
+.rw2-footPer{
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  margin-top: 2px;
+}
